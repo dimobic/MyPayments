@@ -53,19 +53,16 @@ class paymentsCell: UITableViewCell {
         descLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
         descLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
         descLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10).isActive = true
-        //descLabel.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, constant: -20).isActive = true
         
         amountLabel.topAnchor.constraint(equalTo: self.descLabel.bottomAnchor).isActive = true
         amountLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
         amountLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10).isActive = true
         amountLabel.bottomAnchor.constraint(equalTo: self.createdLabel.topAnchor,constant: -5).isActive = true
-        //amountLabel.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, constant: -20).isActive = true
         
         createdLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor).isActive = true
         createdLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
         createdLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor,constant: -5).isActive = true
         createdLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10).isActive = true
-        //createdLabel.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, constant: -20).isActive = true
         
     }
 }

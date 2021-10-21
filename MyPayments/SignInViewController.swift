@@ -39,7 +39,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         text.leftView = UIView(frame: CGRect(x:0, y:0, width:10, height:10))
         text.autocapitalizationType = .none
         text.autocorrectionType = .no
-        text.text = "demo"
+        //text.text = "demo"
         return text
     }()
     lazy var passwordLabel : UILabel = {
@@ -54,9 +54,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let text = UITextField()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.returnKeyType = .join
-        //text.isSecureTextEntry = true
         text.placeholder = "Введите пароль"
-        text.text = "12345"
+        //text.text = "12345"
         text.layer.borderWidth = 1
         text.layer.cornerRadius = 20
         text.layer.borderColor = UIColor.gray.cgColor

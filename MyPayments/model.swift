@@ -94,11 +94,6 @@ func loadPauments(token : String) -> (Bool ,[pay] , String)
             if info.success == "true"{
                 success = true
                 mas = parser(answer)
-                /*guard let infoTrue = try? JSONDecoder().decode(MessagePayments.self, from: data) else{
-                    print("Error Decodable True")
-                    return}
-                success = true
-                mas = infoTrue.response*/
                 semaphore.signal()
             }else{
                 guard let infoFalse = try? JSONDecoder().decode(MessageFalse.self, from: data) else{
@@ -111,7 +106,6 @@ func loadPauments(token : String) -> (Bool ,[pay] , String)
         }
         task.resume()
     semaphore.wait()
-    //print(message)
     return(success,mas,message)
 }
 

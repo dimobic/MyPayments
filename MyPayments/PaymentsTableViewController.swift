@@ -41,7 +41,6 @@ class PaymentsTableViewController: UITableViewController {
         let item = answ.1[indexPath.row]
         cell.descLabel.text = item.desc
         cell.amountLabel.text = item.amount + " " + item.currency
-        //cell.currencyLabel.text = item.currency
         cell.createdLabel.text = item.created
         return cell
     }
