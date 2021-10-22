@@ -16,6 +16,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 40)
         label.textColor = .systemBlue
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         return label
     }()
     lazy var loginLabel : UILabel = {
@@ -151,15 +153,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
     }
     func setupConstraints() {
-        signInLabel.topAnchor.constraint(equalTo: view.topAnchor,constant: 100).isActive = true
+        signInLabel.topAnchor.constraint(equalTo: view.topAnchor,constant: 50).isActive = true
         signInLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         signInLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
-        signInLabel.heightAnchor.constraint(equalTo: loginLabel.heightAnchor).isActive = true
+        signInLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         loginLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         loginLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true
         loginLabel.topAnchor.constraint(equalTo: signInLabel.bottomAnchor,constant: 10).isActive = true
-        loginLabel.heightAnchor.constraint(equalTo: signInLabel.heightAnchor).isActive = true
+        loginLabel.heightAnchor.constraint(equalTo: passwordLabel.heightAnchor).isActive = true
 
         loginText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40).isActive = true
         loginText.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40).isActive = true

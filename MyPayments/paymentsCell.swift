@@ -19,13 +19,14 @@ class paymentsCell: UITableViewCell {
     lazy var descLabel : UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 18)
         return labelCreate(label)
     }()
     lazy var amountLabel : UILabel = {
         let label = UILabel()
         label.textAlignment = .right
         label.textColor = .systemBlue
+        label.font = UIFont.systemFont(ofSize: 20)
         return labelCreate(label)
     }()
     lazy var createdLabel : UILabel = {
@@ -50,19 +51,19 @@ class paymentsCell: UITableViewCell {
         self.contentView.addSubview(amountLabel)
         self.contentView.addSubview(createdLabel)
         
-        descLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
+        createdLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
+        createdLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
+        createdLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10).isActive = true
+        
+        descLabel.topAnchor.constraint(equalTo: self.createdLabel.bottomAnchor).isActive = true
         descLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
         descLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10).isActive = true
+        descLabel.bottomAnchor.constraint(equalTo: self.amountLabel.topAnchor,constant: -5).isActive = true
         
         amountLabel.topAnchor.constraint(equalTo: self.descLabel.bottomAnchor).isActive = true
         amountLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
+        amountLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor,constant: -5).isActive = true
         amountLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10).isActive = true
-        amountLabel.bottomAnchor.constraint(equalTo: self.createdLabel.topAnchor,constant: -5).isActive = true
-        
-        createdLabel.topAnchor.constraint(equalTo: self.amountLabel.bottomAnchor).isActive = true
-        createdLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
-        createdLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor,constant: -5).isActive = true
-        createdLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10).isActive = true
         
     }
 }

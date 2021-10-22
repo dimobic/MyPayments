@@ -41,7 +41,12 @@ class PaymentsTableViewController: UITableViewController {
         let item = answ.1[indexPath.row]
         cell.descLabel.text = item.desc
         cell.amountLabel.text = item.amount + " " + item.currency
-        cell.createdLabel.text = item.created
+        if let time = Double(item.created) {
+            let exactDate = NSDate.init(timeIntervalSince1970: time)
+            let dateFormatt = DateFormatter();
+            dateFormatt.dateFormat = "dd.MM.yyy HH:mm"
+            cell.createdLabel.text = dateFormatt.string(from: exactDate as Date)
+        }
         return cell
     }
 }
